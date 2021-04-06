@@ -25,9 +25,6 @@
 - `StrategyCurveEcrvVoterProxy`:
     - address: [`0xB5F6747147990c4ddCeBbd0d4ef25461a967D079`](https://etherscan.io/address/0xB5F6747147990c4ddCeBbd0d4ef25461a967D079#code)
     - requiredAmount: `2_000_000`
-- `StrategyLenderYieldOptimiser`:
-    - address: [`0x6a97FC93e39b3f792f1fD6e01565ff412B002D20`](https://etherscan.io/address/0x6a97FC93e39b3f792f1fD6e01565ff412B002D20#code)
-    - requiredAmount: `1_000_000`
 - `StrategyCurveIBVoterProxy`:
     - address: [`0x5148C3124B42e73CA4e15EEd1B304DB59E0F2AF7`](https://etherscan.io/address/0x5148C3124B42e73CA4e15EEd1B304DB59E0F2AF7#code)
     - requiredAmount: `2_000_000`
