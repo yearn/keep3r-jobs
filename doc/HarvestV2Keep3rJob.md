@@ -46,3 +46,22 @@
 - `StrategyMakerYFIDAIDelegate`:
     - address: [`0x4730D10703155Ef4a448B17b0eaf3468fD4fb02d`](https://etherscan.io/address/0x4730D10703155Ef4a448B17b0eaf3468fD4fb02d#code)
     - requiredAmount: `1_000_000`
+
+
+### work script:
+
+```ts
+// ABIs at: https://etherscan.io/address/0x620bd1E1D1d845c8904aC03F6cd6b87706B7596b#code
+// Important! use callStatic for all methods (even workable and work) to avoid spending gas
+// only send work transaction if callStatic.work succeeded,
+// even if workable is true, the job might not have credits to pay and the work tx will revert
+const strategies = await HarvestV2Keep3rJob.callStatic.strategies();
+for (const strategy of strategies) {
+    const workable = await HarvestV2Keep3rJob.callStatic.workable(strategy);
+    console.log({ strategy, workable });
+    if (!workable) continue;
+    await HarvestV2Keep3rJob.connect(keeper).callStatic.work(strategy);
+    await HarvestV2Keep3rJob.connect(keeper).work(strategy);
+    console.log('worked!');
+}
+```

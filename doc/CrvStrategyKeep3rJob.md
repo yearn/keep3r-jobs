@@ -99,3 +99,21 @@
     - requiredAmount: `10_000_000000000000000000`
     - requiredEarn: `100_000_000000000000000000`
 
+
+### work script:
+
+```ts
+// ABIs at: https://etherscan.io/address/0x02027bDA2425204f152B8aa35Fb78687D65E1AF5#code
+// Important! use callStatic for all methods (even work) to avoid spending gas
+// only send work transaction if callStatic.work succeeded,
+// even if workable is true, the job might not have credits to pay and the work tx will revert
+const strategies = await CrvStrategyKeep3rJob.callStatic.strategies();
+for (const strategy of strategies) {
+    const workable = await CrvStrategyKeep3rJob.callStatic.workable(strategy);
+    console.log({ strategy, workable });
+    if (!workable) continue;
+    await CrvStrategyKeep3rJob.connect(keeper).callStatic.work(strategy);
+    await CrvStrategyKeep3rJob.connect(keeper).work(strategy);
+    console.log('worked!');
+}
+```

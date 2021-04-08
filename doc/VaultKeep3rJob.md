@@ -79,3 +79,22 @@
     - address: [`0x96Ea6AF74Af09522fCB4c28C269C26F59a31ced6`](https://etherscan.io/address/0x96Ea6AF74Af09522fCB4c28C269C26F59a31ced6#code)
     - requiredEarn: `2_500_000000000000000000`
 
+
+
+### work script:
+
+```ts
+// ABIs at: https://etherscan.io/address/0x4a479E4457841D2D2Ff86e5A5389300963880C10#code
+// Important! use callStatic for all methods (even work) to avoid spending gas
+// only send work transaction if callStatic.work succeeded,
+// even if workable is true, the job might not have credits to pay and the work tx will revert
+const vaults = await VaultKeep3rJob.callStatic.vaults();
+for (const vault of vaults) {
+    const workable = await VaultKeep3rJob.callStatic.workable(vault);
+    console.log({ vault, workable });
+    if (!workable) continue;
+    await VaultKeep3rJob.connect(keeper).callStatic.work(vault);
+    await VaultKeep3rJob.connect(keeper).work(vault);
+    console.log('worked!');
+}
+```
