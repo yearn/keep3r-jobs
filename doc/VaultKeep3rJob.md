@@ -79,7 +79,9 @@
     - address: [`0x96Ea6AF74Af09522fCB4c28C269C26F59a31ced6`](https://etherscan.io/address/0x96Ea6AF74Af09522fCB4c28C269C26F59a31ced6#code)
     - requiredEarn: `2_500_000000000000000000`
 
+### work requirements:
 
+- keeper should **not be a contract**
 
 ### work script:
 

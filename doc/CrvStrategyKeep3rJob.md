@@ -100,6 +100,11 @@
     - requiredEarn: `100_000_000000000000000000`
 
 
+### work requirements:
+
+- keeper should at least have **50 KP3R bonded**
+- keeper should **not be a contract**
+
 ### work script:
 
 ```ts

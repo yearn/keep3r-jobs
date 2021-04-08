@@ -47,6 +47,10 @@
     - address: [`0x4730D10703155Ef4a448B17b0eaf3468fD4fb02d`](https://etherscan.io/address/0x4730D10703155Ef4a448B17b0eaf3468fD4fb02d#code)
     - requiredAmount: `1_000_000`
 
+### work requirements:
+
+- keeper should at least have **50 KP3R bonded**
+- keeper should **not be a contract**
 
 ### work script:
 

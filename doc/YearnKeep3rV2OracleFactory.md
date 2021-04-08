@@ -11,6 +11,9 @@
 - `sushi_YFI-ETH`: [`0x088ee5007c98a9677165d78dd2109ae4a3d04d0c`](https://etherscan.io/token/0x088ee5007c98a9677165d78dd2109ae4a3d04d0c)
 
 
+### work requirements:
+
+- keeper should at least have **0 KP3R bonded**
 
 ### work script:
 
