@@ -9,69 +9,93 @@
 - `StrategyCurveUSDNVoterProxy`:
     - address: [`0x406813fF2143d178d1Ebccd2357C20A424208912`](https://etherscan.io/address/0x406813fF2143d178d1Ebccd2357C20A424208912#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `100_000_000000000000000000`
 - `StrategyCurveBTCVoterProxy`:
     - address: [`0x6D6c1AD13A5000148Aa087E7CbFb53D402c81341`](https://etherscan.io/address/0x6D6c1AD13A5000148Aa087E7CbFb53D402c81341#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `3_000000000000000000`
 - `StrategyCurve3CrvVoterProxy`:
     - address: [`0xC59601F0CC49baa266891b7fc63d2D5FE097A79D`](https://etherscan.io/address/0xC59601F0CC49baa266891b7fc63d2D5FE097A79D#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `200_000_000000000000000000`
 - `StrategyCurveBUSDVoterProxy`:
     - address: [`0x112570655b32A8c747845E0215ad139661e66E7F`](https://etherscan.io/address/0x112570655b32A8c747845E0215ad139661e66E7F#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `100_000_000000000000000000`
 - `StrategyCurveCompoundVoterProxy`:
     - address: [`0x530da5aeF3c8f9CCbc75C97C182D6ee2284B643F`](https://etherscan.io/address/0x530da5aeF3c8f9CCbc75C97C182D6ee2284B643F#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `100_000_000000000000000000`
 - `StrategyCurveDUSDVoterProxy`:
     - address: [`0x33F3f002b8f812f3E087E9245921C8355E777231`](https://etherscan.io/address/0x33F3f002b8f812f3E087E9245921C8355E777231#code)
     - requiredAmount: `2_000_000000000000000000`
+    - requiredEarn: `50_000_000000000000000000`
 - `StrategyCurveTBTCVoterProxy`:
     - address: [`0x61A01a704665b3C0E6898C1B4dA54447f561889d`](https://etherscan.io/address/0x61A01a704665b3C0E6898C1B4dA54447f561889d#code)
     - requiredAmount: `1_000_000000000000000000`
+    - requiredEarn: `2_000000000000000000`
 - `StrategyCurveGUSDVoterProxy`:
     - address: [`0xD42eC70A590C6bc11e9995314fdbA45B4f74FABb`](https://etherscan.io/address/0xD42eC70A590C6bc11e9995314fdbA45B4f74FABb#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `100_000_000000000000000000`
 - `StrategyCurveHUSDVoterProxy`:
     - address: [`0xb21C4d2f7b2F29109FF6243309647A01bEB9950a`](https://etherscan.io/address/0xb21C4d2f7b2F29109FF6243309647A01bEB9950a#code)
     - requiredAmount: `1_000_000000000000000000`
+    - requiredEarn: `10_000_000000000000000000`
 - `StrategyCurveEURVoterProxy`:
     - address: [`0x08553D7BE4fBa2b186A60738301a7E613349c053`](https://etherscan.io/address/0x08553D7BE4fBa2b186A60738301a7E613349c053#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `100_000_000000000000000000`
 - `StrategyCurvesUSDVoterProxy`:
     - address: [`0xd7F641697ca4e0e19F6C9cF84989ABc293D24f84`](https://etherscan.io/address/0xd7F641697ca4e0e19F6C9cF84989ABc293D24f84#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `100_000_000000000000000000`
 - `StrategyCurveUSTVoterProxy`:
     - address: [`0x3be2717DA725f43b7d6C598D8f76AeC43e231B99`](https://etherscan.io/address/0x3be2717DA725f43b7d6C598D8f76AeC43e231B99#code)
     - requiredAmount: `1_000_000000000000000000`
+    - requiredEarn: `10_000_000000000000000000`
 - `StrategyCurveYVoterProxy`:
     - address: [`0x07DB4B9b3951094B9E278D336aDf46a036295DE7`](https://etherscan.io/address/0x07DB4B9b3951094B9E278D336aDf46a036295DE7#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `200_000_000000000000000000`
 - `StrategyCurveBBTCVoterProxy`:
     - address: [`0x551F41aD4ebeCa4F5d025D2B3082b7AB2383B768`](https://etherscan.io/address/0x551F41aD4ebeCa4F5d025D2B3082b7AB2383B768#code)
     - requiredAmount: `5_000_000000000000000000`
+    - requiredEarn: `3_000000000000000000`
 - `StrategyCurveHBTCVoterProxy`:
     - address: [`0xE02363cB1e4E1B77a74fAf38F3Dbb7d0B70F26D7`](https://etherscan.io/address/0xE02363cB1e4E1B77a74fAf38F3Dbb7d0B70F26D7#code)
     - requiredAmount: `5_000_000000000000000000`
+    - requiredEarn: `3_000000000000000000`
 - `StrategyCurveLINKVoterProxy`:
     - address: [`0x153Fe8894a76f14bC8c8B02Dd81eFBB6d24E909f`](https://etherscan.io/address/0x153Fe8894a76f14bC8c8B02Dd81eFBB6d24E909f#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `2_000_000000000000000000`
 - `StrategyCurvePBTCVoterProxy`:
     - address: [`0xD96041c5EC05735D965966bF51faEC40F3888f6e`](https://etherscan.io/address/0xD96041c5EC05735D965966bF51faEC40F3888f6e#code)
     - requiredAmount: `1_000_000000000000000000`
+    - requiredEarn: `2_000000000000000000`
 - `StrategyCurveRENVoterProxy`:
     - address: [`0x76B29E824C183dBbE4b27fe5D8EdF0f926340750`](https://etherscan.io/address/0x76B29E824C183dBbE4b27fe5D8EdF0f926340750#code)
     - requiredAmount: `1_000_000000000000000000`
+    - requiredEarn: `2_000000000000000000`
 - `StrategyCurvea3CRVVoterProxy`:
     - address: [`0x7A10bE29c4d9073E6B3B6b7D1fB5bCDBecA2AA1F`](https://etherscan.io/address/0x7A10bE29c4d9073E6B3B6b7D1fB5bCDBecA2AA1F#code)
     - requiredAmount: `5_000_000000000000000000`
+    - requiredEarn: `100_000_000000000000000000`
 - `StrategyCurveAnkrVoterProxy`:
     - address: [`0xBdCeae91e10A80dbD7ad5e884c86EAe56b075Caa`](https://etherscan.io/address/0xBdCeae91e10A80dbD7ad5e884c86EAe56b075Caa#code)
     - requiredAmount: `2_000_000000000000000000`
+    - requiredEarn: `10_000000000000000000`
 - `StrategyCurvemUSDVoterProxy`:
     - address: [`0xBcC6abd115a32fC27f7B49F9e17D0BcefDd278aC`](https://etherscan.io/address/0xBcC6abd115a32fC27f7B49F9e17D0BcefDd278aC#code)
     - requiredAmount: `1_000_000000000000000000`
+    - requiredEarn: `10_000_000000000000000000`
 - `StrategyCurvesaCRVVoterProxy`:
     - address: [`0x8e2057b8fe8e680B48858cDD525EBc9510620621`](https://etherscan.io/address/0x8e2057b8fe8e680B48858cDD525EBc9510620621#code)
     - requiredAmount: `5_000_000000000000000000`
+    - requiredEarn: `100_000_000000000000000000`
 - `StrategyCurveUSDPVoterProxy`:
     - address: [`0x8c151a8F106Bad20A501DC758c19Fab28a040759`](https://etherscan.io/address/0x8c151a8F106Bad20A501DC758c19Fab28a040759#code)
     - requiredAmount: `10_000_000000000000000000`
+    - requiredEarn: `100_000_000000000000000000`
+
