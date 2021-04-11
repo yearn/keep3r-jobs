@@ -48,6 +48,9 @@
 - `StrategyMakerYFIDAIDelegate`:
     - address: [`0x4730D10703155Ef4a448B17b0eaf3468fD4fb02d`](https://etherscan.io/address/0x4730D10703155Ef4a448B17b0eaf3468fD4fb02d#code)
     - requiredAmount: `1_000_000`
+- `StrategyYearnVECRV`:
+    - address: [`0x683b5C88D48FcCfB3e778FF0fA954F84cA7Ce9DF`](https://etherscan.io/address/0x683b5C88D48FcCfB3e778FF0fA954F84cA7Ce9DF#code)
+    - requiredAmount: `1_000_000`
 
 ### work requirements:
 
