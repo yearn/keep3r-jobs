@@ -14,6 +14,12 @@
 - `StrategyMakerETHDAIDelegate`:
     - address: [`0x0E5397B8547C128Ee20958286436b7BC3f9faAa4`](https://etherscan.io/address/0x0E5397B8547C128Ee20958286436b7BC3f9faAa4#code)
     - requiredAmount: `100_000_000_000_000_000`
+- `StrategysteCurveWETHSingleSided`:
+    - address: [`0x2886971eCAF2610236b4869f58cD42c115DFb47A`](https://etherscan.io/address/0x2886971eCAF2610236b4869f58cD42c115DFb47A#code)
+    - requiredAmount: `1_000_000`
+- `StrategyeCurveWETHSingleSided`:
+    - address: [`0xda988eBb26F505246C59Ba26514340B634F9a7a2`](https://etherscan.io/address/0xda988eBb26F505246C59Ba26514340B634F9a7a2#code)
+    - requiredAmount: `1_000_000`
 
 ### work requirements:
 

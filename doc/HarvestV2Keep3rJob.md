@@ -24,33 +24,48 @@
 - `StrategyLenderYieldOptimiser`:
     - address: [`0x32b8C26d0439e1959CEa6262CBabC12320b384c4`](https://etherscan.io/address/0x32b8C26d0439e1959CEa6262CBabC12320b384c4#code)
     - requiredAmount: `2_000_000`
-- `StrategyCurveEcrvVoterProxy`:
-    - address: [`0xB5F6747147990c4ddCeBbd0d4ef25461a967D079`](https://etherscan.io/address/0xB5F6747147990c4ddCeBbd0d4ef25461a967D079#code)
+- `CurvecrvRenWBTCVoterProxy`:
+    - address: [`0x2A94A56fBEE72ACEC39ea0269c1356a8DFbC4765`](https://etherscan.io/address/0x2A94A56fBEE72ACEC39ea0269c1356a8DFbC4765#code)
     - requiredAmount: `2_000_000`
+- `StrategyMakerYFIDAIDelegate`:
+    - address: [`0x4730D10703155Ef4a448B17b0eaf3468fD4fb02d`](https://etherscan.io/address/0x4730D10703155Ef4a448B17b0eaf3468fD4fb02d#code)
+    - requiredAmount: `1_000_000`
 - `StrategyCurveIBVoterProxy`:
     - address: [`0x5148C3124B42e73CA4e15EEd1B304DB59E0F2AF7`](https://etherscan.io/address/0x5148C3124B42e73CA4e15EEd1B304DB59E0F2AF7#code)
     - requiredAmount: `2_000_000`
 - `IBLevComp`:
     - address: [`0x77b7CD137Dd9d94e7056f78308D7F65D2Ce68910`](https://etherscan.io/address/0x77b7CD137Dd9d94e7056f78308D7F65D2Ce68910#code)
     - requiredAmount: `2_000_000`
-- `IBLevComp`:
-    - address: [`0xE68A8565B4F837BDa10e2e917BFAaa562e1cD143`](https://etherscan.io/address/0xE68A8565B4F837BDa10e2e917BFAaa562e1cD143#code)
-    - requiredAmount: `2_000_000`
+- `StrategyMakerETHDAIDelegate`:
+    - address: [`0x0E5397B8547C128Ee20958286436b7BC3f9faAa4`](https://etherscan.io/address/0x0E5397B8547C128Ee20958286436b7BC3f9faAa4#code)
+    - requiredAmount: `1_000_000`
 - `StrategysteCurveWETHSingleSided`:
     - address: [`0x2886971eCAF2610236b4869f58cD42c115DFb47A`](https://etherscan.io/address/0x2886971eCAF2610236b4869f58cD42c115DFb47A#code)
     - requiredAmount: `1_000_000`
 - `CurvehCRVVoterProxy`:
     - address: [`0x91cBf0014a966615e1050c90A1aBf1d1d5d8cffd`](https://etherscan.io/address/0x91cBf0014a966615e1050c90A1aBf1d1d5d8cffd#code)
     - requiredAmount: `1_000_000`
-- `StrategyMakerETHDAIDelegate`:
-    - address: [`0x0E5397B8547C128Ee20958286436b7BC3f9faAa4`](https://etherscan.io/address/0x0E5397B8547C128Ee20958286436b7BC3f9faAa4#code)
-    - requiredAmount: `1_000_000`
-- `StrategyMakerYFIDAIDelegate`:
-    - address: [`0x4730D10703155Ef4a448B17b0eaf3468fD4fb02d`](https://etherscan.io/address/0x4730D10703155Ef4a448B17b0eaf3468fD4fb02d#code)
-    - requiredAmount: `1_000_000`
+- `IBLevComp`:
+    - address: [`0xE68A8565B4F837BDa10e2e917BFAaa562e1cD143`](https://etherscan.io/address/0xE68A8565B4F837BDa10e2e917BFAaa562e1cD143#code)
+    - requiredAmount: `2_000_000`
 - `StrategyYearnVECRV`:
     - address: [`0x683b5C88D48FcCfB3e778FF0fA954F84cA7Ce9DF`](https://etherscan.io/address/0x683b5C88D48FcCfB3e778FF0fA954F84cA7Ce9DF#code)
     - requiredAmount: `1_000_000`
+- `StrategyIdleidleDAIYield`:
+    - address: [`0x9f51F4df0b275dfB1F74f6Db86219bAe622B36ca`](https://etherscan.io/address/0x9f51F4df0b275dfB1F74f6Db86219bAe622B36ca#code)
+    - requiredAmount: `3_000_000`
+- `CurveeCRVVoterProxy`:
+    - address: [`0xdD498eB680B0CE6Cac17F7dab0C35Beb6E481a6d`](https://etherscan.io/address/0xdD498eB680B0CE6Cac17F7dab0C35Beb6E481a6d#code)
+    - requiredAmount: `2_000_000`
+- `CurvecrvRenWSBTCVoterProxy`:
+    - address: [`0xdD92491B9F55620C043d55D25620a7B126451ddD`](https://etherscan.io/address/0xdD92491B9F55620C043d55D25620a7B126451ddD#code)
+    - requiredAmount: `2_000_000`
+- `CurvesaCRVVoterProxy`:
+    - address: [`0xE73817de3418bB44A4FeCeBa53Aa835333C550e7`](https://etherscan.io/address/0xE73817de3418bB44A4FeCeBa53Aa835333C550e7#code)
+    - requiredAmount: `2_000_000`
+- `StrategyeCurveWETHSingleSided`:
+    - address: [`0xda988eBb26F505246C59Ba26514340B634F9a7a2`](https://etherscan.io/address/0xda988eBb26F505246C59Ba26514340B634F9a7a2#code)
+    - requiredAmount: `2_000_000`
 
 ### work requirements:
 
