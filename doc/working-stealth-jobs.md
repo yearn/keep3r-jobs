@@ -8,10 +8,10 @@
 
 ### How to bond:
 
-- to add bonds tou need to call (bond) with as much ETH (msg.value) as you'd like to bond.
+- to add bonds you need to call (bond) with as much ETH (msg.value) as you'd like to bond.
     - check amount being bonded is higher than the penalty of the job you want to perform work on
 
-- call `enableStealthJob(address _job)` with `_job` being the address of the job you with to perform work on
+- call `enableStealthJob(address _job)` with `_job` being the address of the job you want to perform work on
     - in this case `0xYearnStealthRelayer` (YearnStealthRelayer)
     - you can also use `enableStealthJobs(address[] calldata _jobs)`
     - this is required since jobs have the ability to take your bond away.
@@ -50,7 +50,7 @@
 
 - at any point in time governance can take your bond away.
 - if the private mempool service you were using leaks your tx, you can get your bond slashed.
-    - you stilll might be able to recover up to 90% of the penalty if there was no harm done.
+    - you still might be able to recover up to 90% of the penalty if there was no harm done.
 
 
 ### Requirements:
@@ -72,11 +72,11 @@ view bonded-stealth-txs script for sample code. TBD
 ### Reporting errors
 
 To report errors, bugs or security concerns you can reach us at Yearn's discord server, under the Keep3r channel.
-For security concerns/exploits please raise the issue without discosing the details, and we'll get in touch with you over the discord channel so we can establish a secure line of communication. Bounty rewards will be assigned to you for your work.
+For security concerns/exploits please raise the issue without disclosing the details, and we'll get in touch with you over the discord channel so we can establish a secure line of communication. Bounty rewards will be assigned to you for your work.
 
 ### Disputing slashing
 
-If you feel you have been mistakenly slash please reach to us over yearn's discord server or though yearn's keep3r forum.
+If you feel you have been mistakenly slashed please reach to us over yearn's discord server or though yearn's keep3r forum.
 Remember 10% of your slashed bond will not be refunded, since it was used to reward the watcher who reported the tx-hash.
 
 In some cases even if you got slashed while acting in good faith, and the underlying job was not harmed, you can get up to 90% of the penalty back.
