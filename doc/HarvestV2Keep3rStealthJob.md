@@ -1,6 +1,6 @@
-# StealthHarvestV2Keep3rJob
+# HarvestV2Keep3rStealthJob
 
-- address: [`0x3Da70a551C0F785580A291b7d8c7D0F3Dc4c6688`](https://etherscan.io/address/0x3Da70a551C0F785580A291b7d8c7D0F3Dc4c6688#code)
+- address: [`0xTBD`](https://etherscan.io/address/0xTBD#code)
 
 > to add a new strategies create a PR with the added strategies below
 
