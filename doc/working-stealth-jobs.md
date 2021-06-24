@@ -11,14 +11,14 @@
 - to add bonds you need to call (bond) with as much ETH (msg.value) as you'd like to bond.
     - check amount being bonded is higher than the penalty of the job you want to perform work on
 
-- call `enableStealthJob(address _job)` with `_job` being the address of the job you want to perform work on
+- call `enableStealthContract(address _contract)` with `_contract` being the address of the contract you want to perform work on
     - in this case `0xYearnStealthRelayer` (YearnStealthRelayer)
-    - you can also use `enableStealthJobs(address[] calldata _jobs)`
-    - this is required since jobs have the ability to take your bond away.
-        - so, please be careful and only enable jobs after reviewing them.
+    - you can also use `enableStealthContracts(address[] calldata _contracts)`
+    - this is required since contracts have the ability to take your bond away.
+        - so, please be careful and only enable contracts after reviewing them.
 
-- to remove a job from your list just call `disableStealthJob(address _job)`
-    - you can also use `disableStealthJobs(address[] calldata _jobs)`
+- to remove a contract from your list just call `disableStealthContract(address _contract)`
+    - you can also use `disableStealthContracts(address[] calldata _contracts)`
 
 - to unbond, call (startUnbond), wait 4 days, and call (unbond | unbondAll).
     - in this period you'll not be able to perform any work
