@@ -1,24 +1,22 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.id = exports.handler = void 0;
-const ethers_1 = require("defender-relay-client/lib/ethers");
-const ethers_2 = require("ethers");
-const UPPER_BOUND = 15;
-const LOWER_BOUND = 0;
+const lodash_1 = __importDefault(require("lodash"));
+const axios_1 = __importDefault(require("axios"));
+const LIMIT = 5000;
 const handler = async (autotaskEvent) => {
-    const provider = new ethers_1.DefenderRelayProvider(autotaskEvent);
     const body = autotaskEvent.request.body;
     const matches = [];
     for (let i = 0; i < body.events.length; i++) {
         const event = body.events[i];
-        const tx = await provider.getTransaction(event.transaction.transactionHash);
-        const transactionIndex = ethers_2.BigNumber.from(tx.transactionIndex);
-        if ((transactionIndex.gte(LOWER_BOUND) && transactionIndex.lte(UPPER_BOUND)) ||
-            tx.gasPrice.eq(0)) {
-            matches.push({
-                hash: event.hash
-            });
-        }
+        const flashBotLastTXsRequest = await axios_1.default.get(`https://blocks.flashbots.net/v1/transactions?limit=${LIMIT}`);
+        const { transactions } = flashBotLastTXsRequest.data;
+        const flashbotTx = lodash_1.default.find(transactions, (transaction) => transaction.transaction_hash.toLowerCase() === event.transaction.transactionHash.toLowerCase());
+        if (!!flashbotTx)
+            matches.push({ hash: event.hash });
     }
     return { matches };
 };

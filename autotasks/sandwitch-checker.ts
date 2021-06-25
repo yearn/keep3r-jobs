@@ -1,6 +1,7 @@
 import { RelayerParams } from 'defender-relay-client/lib/relayer';
 import { DefenderRelayProvider } from 'defender-relay-client/lib/ethers';
-import { BigNumber } from 'ethers';
+import _ from 'lodash';
+import axios from 'axios';
 
 type WebhookRequest = {
   body?: object;
@@ -24,25 +25,34 @@ type Matches = {
   hash: string
 }[];
 
-const UPPER_BOUND = 15;
-const LOWER_BOUND = 0;
+type FlashBotTransactions = {
+  transaction_hash: string;
+  tx_index: number;
+  bundle_index: number;
+  block_number: number;
+  eao_address: string;
+  to_address: string;
+  gas_used: number;
+  gas_price: string;
+  coinbase_transfer: string;
+  total_miner_reward: string;
+}
+
+const LIMIT = 5000;
 
 const handler: Handler = async (autotaskEvent: AutotaskEvent): Promise<object | undefined> => {
-  const provider = new DefenderRelayProvider(autotaskEvent);
   const body: any = autotaskEvent.request!.body;
   const matches: Matches = [];
   for (let i = 0; i < body.events.length; i++) {
     const event = body.events[i];
-    const tx = (await provider.getTransaction(event.transaction.transactionHash) as any);
-    const transactionIndex = BigNumber.from(tx.transactionIndex);
-    if (
-      (transactionIndex.gte(LOWER_BOUND) && transactionIndex.lte(UPPER_BOUND)) ||
-      tx.gasPrice.eq(0)
-    ) {
-      matches.push({
-        hash: event.hash
-      });
-    }
+    const flashBotLastTXsRequest = await axios.get(`https://blocks.flashbots.net/v1/transactions?limit=${LIMIT}`);
+    const { transactions } = (flashBotLastTXsRequest.data as { transactions: FlashBotTransactions[] });
+    const flashbotTx = _.find(
+      transactions, 
+      (transaction: FlashBotTransactions) => 
+        transaction.transaction_hash.toLowerCase() === event.transaction.transactionHash.toLowerCase()
+    );
+    if (!!flashbotTx) matches.push({ hash: event.hash });
   }
   return { matches };
 };
