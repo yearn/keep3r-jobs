@@ -36,13 +36,16 @@
     const stealthHash = ethers.utils.solidityKeccak256(['string'], ['random-secret-hash']);
     // then get the block number (useful for bandit attack protection)
     let blockNumber = await ethers.provider.getBlockNumber();
+    const pendingBlock = await ethers.provider.send("eth_getBlockByNumber", ["latest", false])
+    const blockGasLimit = BigNumber.from(pendingBlock.gasLimit);
 
     // and finally execute your tx. (this step can be changed to use flashbots, see guide below)
     await stealthRelayer.connect(alice).execute(
       stealthERC20.address, // address _job,
       callData, // bytes memory _callData,
       stealthHash, // bytes32 _stealthHash,
-      blockNumber + 1 // uint256 _blockNumber
+      blockNumber + 1, // uint256 _blockNumber
+      { gasLimit: blockGasLimit.sub(15_000) } // 15k should be more than enough to cover for block's gasLimit reduction
     );
 ```
 
@@ -57,6 +60,8 @@
 
 - interacting with the StealthRelayer **MUST ALWAYS** be done using an EOA.
     - failure to comply with this requirement will result in instant and unreversable slashing of all your bond.
+- [IMPORTANT] we use an EOA check that requires you to set the tx's gas as close to `block.gaslimit` as possible.
+    - there is a buffer of ~36192 gas units, this can be increased or decreased, but it's there to give you a little room and make sure you can send txs with a bit less of the current max block.gasLimit
 
 - we suggest you use Flashbots to avoid getting charged on reverted txs, but you can use whatever private mempool service you desire.
     - here is a sample script (TBD)
