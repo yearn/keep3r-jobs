@@ -1,8 +1,8 @@
 # Working Stealth Jobs
 
-**[YearnStealthVault](https://etherscan.io/address/0xYearnStealthVault#code)**
+**[YearnStealthVault](https://etherscan.io/address/0xC454F4E1DDB39c8De9663287D52b0E4Feb4cA45E#code)**
 
-**[YearnStealthRelayer](https://etherscan.io/address/0xYearnStealthRelayer#code)**
+**[YearnStealthRelayer](https://etherscan.io/address/0x0a61c2146A7800bdC278833F21EBf56Cd660EE2a#code)**
 
 
 
@@ -12,7 +12,7 @@
     - check amount being bonded is higher than the penalty of the job you want to perform work on
 
 - call `enableStealthContract(address _contract)` with `_contract` being the address of the contract you want to perform work on
-    - in this case `0xYearnStealthRelayer` (YearnStealthRelayer)
+    - in this case `0x0a61c2146A7800bdC278833F21EBf56Cd660EE2a` (YearnStealthRelayer)
     - you can also use `enableStealthContracts(address[] calldata _contracts)`
     - this is required since contracts have the ability to take your bond away.
         - so, please be careful and only enable contracts after reviewing them.
@@ -40,6 +40,7 @@
     const blockGasLimit = BigNumber.from(pendingBlock.gasLimit);
 
     // and finally execute your tx. (this step can be changed to use flashbots, see guide below)
+    // [Important] If you do NOT use flashbots, make sure to be using a private-mempool, such as Taichi, or you'll lose your bond.
     await stealthRelayer.connect(alice).execute(
       stealthERC20.address, // address _job,
       callData, // bytes memory _callData,
@@ -64,14 +65,14 @@
     - there is a buffer of ~36192 gas units, this can be increased or decreased, but it's there to give you a little room and make sure you can send txs with a bit less of the current max block.gasLimit
 
 - we suggest you use Flashbots to avoid getting charged on reverted txs, but you can use whatever private mempool service you desire.
-    - here is a sample script (TBD)
-    - [IMPORTANT] take into account that if we see any abuse or irregular activity, i.e. tx-sandwitching, you might lose both your StealthVault and Keep3r bonds.
+    - here is a [sample script for goerli](https://github.com/lbertenasco/bonded-stealth-tx/blob/main/scripts/flashbots/02-goerli-send-tx.ts)
+    - [IMPORTANT] take into account that if we see any abuse or irregular activity, i.e. tx-sandwiching, you might lose both your StealthVault and Keep3r bonds.
 
 ### Being a watcher:
 
 Being a watcher for the StealthRelayer implies you need to constantly monitor mempool transactions, and report any public tx you might see that will earn you a percentage of the keeper bond.
 
-view bonded-stealth-txs script for sample code. TBD
+view bonded-stealth-txs script for sample code. [yearn sample watcher script](https://github.com/lbertenasco/bonded-stealth-tx/blob/main/scripts/watcher/yearn.ts)
 
 
 ### Reporting errors
