@@ -52,7 +52,18 @@ const handler: Handler = async (autotaskEvent: AutotaskEvent): Promise<object | 
       (transaction: FlashBotTransactions) => 
         transaction.transaction_hash.toLowerCase() === event.transaction.transactionHash.toLowerCase()
     );
-    if (!!flashbotTx) matches.push({ hash: event.hash });
+    if (!!flashbotTx) {
+      const bundledTxs = _.filter(
+        transactions,
+        (transaction: FlashBotTransactions) => 
+          transaction.bundle_index === flashbotTx.bundle_index
+      );
+      if (flashbotTx.tx_index != 0 || bundledTxs.length > 1) {
+        matches.push({ 
+          hash: event.hash 
+        });
+      }
+    } 
   }
   return { matches };
 };

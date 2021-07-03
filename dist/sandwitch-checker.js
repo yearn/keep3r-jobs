@@ -15,8 +15,14 @@ const handler = async (autotaskEvent) => {
         const flashBotLastTXsRequest = await axios_1.default.get(`https://blocks.flashbots.net/v1/transactions?limit=${LIMIT}`);
         const { transactions } = flashBotLastTXsRequest.data;
         const flashbotTx = lodash_1.default.find(transactions, (transaction) => transaction.transaction_hash.toLowerCase() === event.transaction.transactionHash.toLowerCase());
-        if (!!flashbotTx)
-            matches.push({ hash: event.hash });
+        if (!!flashbotTx) {
+            const bundledTxs = lodash_1.default.filter(transactions, (transaction) => transaction.bundle_index === flashbotTx.bundle_index);
+            if (flashbotTx.tx_index != 0 || bundledTxs.length > 1) {
+                matches.push({
+                    hash: event.hash
+                });
+            }
+        }
     }
     return { matches };
 };
