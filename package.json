@@ -44,6 +44,7 @@
     "verify": "hardhat verify --network mainnet --constructor-args utils/verify-args.js $ADDRESS"
   },
   "dependencies": {
+    "axios-retry": "^3.1.9",
     "prompt-confirm": "2.0.4",
     "queue-microtask": "1.2.3"
   },

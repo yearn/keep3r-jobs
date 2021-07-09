@@ -1,24 +1,6 @@
-import { RelayerParams } from 'defender-relay-client/lib/relayer';
 import { DefenderRelaySigner, DefenderRelayProvider } from 'defender-relay-client/lib/ethers';
 import { ethers, utils } from 'ethers';
-
-type WebhookRequest = {
-  body?: object;
-  queryParameters?: { [name: string]: string };
-  headers?: { [name: string]: string };
-};
-
-// Secret key/value pairs
-type Secrets = {
-  [name: string]: string;
-};
-
-type AutotaskEvent = RelayerParams & {
-  secrets?: Secrets;
-  request?: WebhookRequest;
-};
-
-type Handler = (event: AutotaskEvent) => Promise<object | undefined>;
+import { AutotaskEvent, Handler } from './types';
 
 const threshold = utils.parseEther('10');
 

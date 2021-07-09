@@ -1,58 +1,48 @@
-import { RelayerParams } from 'defender-relay-client/lib/relayer';
-import { DefenderRelayProvider } from 'defender-relay-client/lib/ethers';
+import axiosRetry from 'axios-retry';
 import _ from 'lodash';
 import axios from 'axios';
+import { AutotaskEvent, FlashBotBlock, FlashBotTransactions, Handler, Matches } from './types';
+import { BigNumber } from 'ethers';
 
-type WebhookRequest = {
-  body?: object;
-  queryParameters?: { [name: string]: string };
-  headers?: { [name: string]: string };
-};
-
-// Secret key/value pairs
-type Secrets = {
-  [name: string]: string;
-};
-
-type AutotaskEvent = RelayerParams & {
-  secrets?: Secrets;
-  request?: WebhookRequest;
-};
-
-type Handler = (event: AutotaskEvent) => Promise<object | undefined>;
-
-type Matches = {
-  hash: string
-}[];
-
-type FlashBotTransactions = {
-  transaction_hash: string;
-  tx_index: number;
-  bundle_index: number;
-  block_number: number;
-  eao_address: string;
-  to_address: string;
-  gas_used: number;
-  gas_price: string;
-  coinbase_transfer: string;
-  total_miner_reward: string;
-}
-
-const LIMIT = 5000;
+axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay });
 
 const handler: Handler = async (autotaskEvent: AutotaskEvent): Promise<object | undefined> => {
-  const body: any = autotaskEvent.request!.body;
+  const body = autotaskEvent.request!.body;
   const matches: Matches = [];
   for (let i = 0; i < body.events.length; i++) {
     const event = body.events[i];
-    const flashBotLastTXsRequest = await axios.get(`https://blocks.flashbots.net/v1/transactions?limit=${LIMIT}`);
-    const { transactions } = (flashBotLastTXsRequest.data as { transactions: FlashBotTransactions[] });
+    const blockNumber = BigNumber.from(event.transaction.blockNumber).toString();
+    const flashBotMyTxBlockRequest = await axios.get(`https://blocks.flashbots.net/v1/blocks?block_number=${blockNumber}&limit=1`);
+    const { blocks } = (flashBotMyTxBlockRequest.data as { blocks: FlashBotBlock[] });
+    if (blocks.length == 0) {
+      console.log('Tx was not in a flashbot block');
+      return;
+    }
+    const { transactions } = blocks[0];
     const flashbotTx = _.find(
       transactions, 
       (transaction: FlashBotTransactions) => 
         transaction.transaction_hash.toLowerCase() === event.transaction.transactionHash.toLowerCase()
     );
-    if (!!flashbotTx) matches.push({ hash: event.hash });
+    if (!flashbotTx) {
+      console.log('Couldn\'t find our tx in flashbot block');
+      return;
+    }
+    const bundledTxs = _.filter(
+      transactions,
+      (transaction: FlashBotTransactions) => 
+        transaction.bundle_index === flashbotTx.bundle_index
+    );
+    if (flashbotTx.tx_index != 0 || bundledTxs.length > 1) {
+      matches.push({ 
+        hash: event.hash,
+        metadata: {
+          block: `https://blocks.flashbots.net/v1/blocks?block_number=${blockNumber}&limit=1`
+        }
+      });
+    } else {
+      console.log('Tx didn\'t seem to be sandwitched');
+    }
   }
   return { matches };
 };
