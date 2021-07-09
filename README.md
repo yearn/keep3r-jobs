@@ -16,3 +16,5 @@
 - [`TendV2Keep3rJob`](./doc/TendV2Keep3rJob.md)
 
 - [`YearnKeep3rV2OracleFactory`](./doc/YearnKeep3rV2OracleFactory-md)
+
+- [`HarvestV2Keep3rStealthJob`](./doc/HarvestV2Keep3rStealthJob.md)
