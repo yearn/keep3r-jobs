@@ -43,7 +43,7 @@ for (const strategy of strategies) {
       HarvestV2Keep3rStealthJob.address, // address _job,
       callData, // bytes memory _callData,
       stealthHash, // bytes32 _stealthHash,
-      blockNumber + 1, // uint256 _blockNumber
+      blockNumber + 2, // uint256 _blockNumber
       { gasLimit: blockGasLimit.sub(15_000) } // 15k should be more than enough to cover for block's gasLimit reduction
     );
 
@@ -53,7 +53,7 @@ for (const strategy of strategies) {
       HarvestV2Keep3rStealthJob.address, // address _job,
       callData, // bytes memory _callData,
       stealthHash, // bytes32 _stealthHash,
-      blockNumber + 1, // uint256 _blockNumber
+      blockNumber + 2, // uint256 _blockNumber
       { gasLimit: blockGasLimit.sub(15_000) } // 15k should be more than enough to cover for block's gasLimit reduction
     );
 
