@@ -18,7 +18,7 @@
 ### work script:
 
 ```ts
-// ABIs at: https://etherscan.io/address/0x7b28163e7a3db17ef2dba02bcf7250a8dc505057#code
+// ABIs at: https://etherscan.io/address/0xf72D7E44ec3F79379912B8d0f661bE954a101159#code
 // Important! use callStatic for all methods (even work) to avoid spending gas
 // only send work transaction if callStatic.work succeeded,
 // even if workable is true, the job might not have credits to pay and the work tx will revert
