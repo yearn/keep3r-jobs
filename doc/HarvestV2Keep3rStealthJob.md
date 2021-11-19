@@ -44,7 +44,8 @@ for (const strategy of strategies) {
       callData, // bytes memory _callData,
       stealthHash, // bytes32 _stealthHash,
       blockNumber + 2, // uint256 _blockNumber
-      { gasLimit: blockGasLimit.sub(15_000) } // 15k should be more than enough to cover for block's gasLimit reduction
+      // block.gasLimit EOA check has been disabled until EIP-3074
+      // { gasLimit: blockGasLimit.sub(15_000) } // 15k should be more than enough to cover for block's gasLimit reduction
     );
 
     // and finally execute your tx. (this step can be changed to use flashbots, see `working-stealth-jobs` guide)
@@ -54,7 +55,8 @@ for (const strategy of strategies) {
       callData, // bytes memory _callData,
       stealthHash, // bytes32 _stealthHash,
       blockNumber + 2, // uint256 _blockNumber
-      { gasLimit: blockGasLimit.sub(15_000) } // 15k should be more than enough to cover for block's gasLimit reduction
+      // block.gasLimit EOA check has been disabled until EIP-3074
+      // { gasLimit: blockGasLimit.sub(15_000) } // 15k should be more than enough to cover for block's gasLimit reduction
     );
 
     console.log('worked!');
